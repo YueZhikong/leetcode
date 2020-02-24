@@ -1,7 +1,8 @@
 package forOffer;
 //1～n整数中1出现的次数
-public class Question44 {
+public class Question44focus {
     //我的解法
+    //转String
     //超时了
     public int countDigitOne(int n) {
         if (n<1){
@@ -22,5 +23,9 @@ public class Question44 {
             }
         }
         return sum;
+    }
+    //1～n整数中1出现的次数
+    public int countDigitOne2(int n){
+        return 0;
     }
 }
