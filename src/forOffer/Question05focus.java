@@ -7,35 +7,29 @@ import java.util.Map;
 public class Question05focus {
     //我的解法
     //递归或迭代，没看懂
-//    public TreeNode buildTree(int[] preorder, int[] inorder) {
-//        if(preorder==null||preorder.length==0){
-//            return null;
-//        }
-//        Map<Integer,Integer> indexMap = new HashMap<>();
-//        int length = preorder.length;
-//        for (int i=0;i<length;i++){
-//            indexMap.put(inorder[i],i);
-//        }
-//        TreeNode root=buildTree(preorder,0,length-1,inorder,0,length-1,indexMap);
-//        return root;
-//    }
-//
-//    public TreeNode buildTree(int[] preorder, int preorderStart, int preorderEnd, int[] inorder, int inorderStart, int inorderEnd, Map<Integer, Integer> indexMap) {
-//        if (preorderStart > preorderEnd) {
-//            return null;
-//        }
-//        int rootVal = preorder[preorderStart];
-//        TreeNode root = new TreeNode(rootVal);
-//        if (preorderStart == preorderEnd) {
-//            return root;
-//        } else {
-//            int rootIndex = indexMap.get(rootVal);
-//            int leftNodes = rootIndex - inorderStart, rightNodes = inorderEnd - rootIndex;
-//            TreeNode leftSubtree = buildTree(preorder, preorderStart + 1, preorderStart + leftNodes, inorder, inorderStart, rootIndex - 1, indexMap);
-//            TreeNode rightSubtree = buildTree(preorder, preorderEnd - rightNodes + 1, preorderEnd, inorder, rootIndex + 1, inorderEnd, indexMap);
-//            root.left = leftSubtree;
-//            root.right = rightSubtree;
-//            return root;
-//        }
-//    }
+    //失败
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        if (preorder.length==0||inorder.length==0||preorder.length!=inorder.length){
+            return null;
+        }
+        TreeNode root=null;
+        build(preorder,inorder,0,preorder.length-1,root);
+        return root;
+    }
+    public void build(int[] preorder,int[] inorder,int i,int j,TreeNode root){
+        if (i<0||j>preorder.length-1){
+            return;
+        }
+
+        root=new TreeNode(preorder[i]);
+        if (i>=j){
+            return;
+        }
+        for (int c=i;c<=j;c++){
+            if (inorder[c]==preorder[i]){
+                build(preorder, inorder, i, c-1, root.left);
+                build(preorder, inorder, c+1, j, root.right);
+            }
+        }
+    }
 }
