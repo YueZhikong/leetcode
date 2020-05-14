@@ -1,8 +1,6 @@
 package ArrayAndString;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Solution {
     //寻找数组的中心索引
@@ -84,5 +82,87 @@ public class Solution {
 //    public int[] findDiagonalOrder(int[][] matrix) {
 //
 //    }
+    public List<Integer> spiralOrder(int[][] matrix) {
+        LinkedList<Integer> linkedList=new LinkedList<>();
+
+        if (matrix.length==0){
+            return linkedList;
+        }
+        int left=0;
+        int top=0;
+        int right=matrix[0].length-1;
+        int bottom=matrix.length-1;
+        while (true){
+            //从左向右
+            for (int i=left;i<=right;i++){
+                linkedList.add(matrix[top][i]);
+            }
+            top++;
+            if (top>bottom){
+                break;
+            }
+            //从上往下
+            for (int i=top;i<=bottom;i++){
+                linkedList.add(matrix[i][right]);
+            }
+            right--;
+            if (right<left){
+                break;
+            }
+            //从右往左
+            for (int i=right;i>=left;i--){
+                linkedList.add(matrix[bottom][i]);
+            }
+            bottom--;
+            if (top>bottom){
+                break;
+            }
+            //从下往上
+            for (int i=bottom;i>=top;i--){
+                linkedList.add(matrix[i][left]);
+            }
+            left++;
+            if (right<left){
+                break;
+            }
+        }
+        return linkedList;
+    }
+    //杨辉三角
+    //不知道哪里有问题，日后再说吧
+    public static List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> result=new ArrayList<>();
+        int i=1;
+        while (i<=numRows){
+            ArrayList<Integer> temp=new ArrayList<>(i);
+            if (result.size()==0){
+                temp.add(1);
+                result.add(temp);
+            }
+            else {
+                for (int j=0;j<i;j++){
+                    if (j==0){
+                        temp.add(1);
+                    }
+                    else if (j==i-1){
+                        temp.add(1);
+                    }
+                    else {
+                        int a=result.get(result.size()-1).get(j-1);
+                        int b=result.get(result.size()-1).get(j);
+                        temp.add(a+b);
+                    }
+                }
+                result.add(temp);
+            }
+            i++;
+        }
+        return result;
+    }
+    //二进制求和
+    //我想到的又是if else 不想写
+    public String addBinary(String a, String b) {
+        return null;
+    }
 
 }
