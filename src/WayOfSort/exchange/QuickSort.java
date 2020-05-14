@@ -12,7 +12,7 @@ public class QuickSort {
                 j--;
             }
             sl.swap(i,j);
-            while (sl.r[i]<mV && i<j){
+            while (sl.r[i]<=mV && i<j){
                 i++;
             }
             sl.swap(i,j);
