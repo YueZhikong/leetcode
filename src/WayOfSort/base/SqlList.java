@@ -14,6 +14,7 @@ public class SqlList {
         if (i==j){
             return;
         }
+
         //这个省内存，惊了
         r[i]=r[i]+r[j];
         r[j]=r[i]-r[j];
