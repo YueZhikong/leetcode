@@ -3,6 +3,14 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[67]二进制求和.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[67]二进制求和.java" />
+              <option name="questionId" value="67" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="D:/leetcode/temp/leetcode/editor/cn/[100]相同的树.java">
           <value>
             <LeetcodeEditor>
@@ -32,6 +40,14 @@
             <LeetcodeEditor>
               <option name="path" value="D:/leetcode/temp/leetcode/editor/cn/[71]简化路径.java" />
               <option name="questionId" value="71" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="D:/leetcode/temp/leetcode/editor/cn/[94]二叉树的中序遍历.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="D:/leetcode/temp/leetcode/editor/cn/[94]二叉树的中序遍历.java" />
+              <option name="questionId" value="94" />
             </LeetcodeEditor>
           </value>
         </entry>
